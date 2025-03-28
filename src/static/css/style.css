@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+}
+
+header, footer {
+    height: 10vh; /* 10% of viewport height */
+    background-color: #5271ff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header{
+    display: flex;
+    padding-inline-start: 10vh;
+    justify-content: start;
+}
+
+.menu{
+    flex : 1;
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu>div{
+    user-select: none;
+}
+
+.menu_btn{
+    color : #f4f4f4;
+    font-size: 30px;
+    border : solid #004aad 2px;
+    padding: 10px;
+    border-radius: 10px;
+    transition: transform 0.2s ease-out;
+}
+.menu_btn:hover{
+    background-color: #004aad;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.hamburger{
+    display: flex;
+    width : 30px;
+    flex-direction: column;
+}
+.hamburger_trait{
+    margin: 3px;
+    width: 100%;
+    border: solid 2px white;
+    border-radius: 20px;
+
+}
+.hamburger:hover{
+    cursor: pointer;
+}
+
+#floating_side_menu{
+    height: 100vh;
+    width: 30vh;
+    background-color: #0c51aa;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-top: 20px;
+    color: white;
+    border-left: none;
+    border-radius: 0px 50px 30px 0;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+#floating_side_menu.visible{
+    visibility: visible;
+    transform: translateX(0);
+}
+
+#floating_side_menu>.header{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    align-items: center;
+}
+
+#floating_side_menu>.main{
+    display: flex;
+    flex-direction: column;
+    padding-right: 10px;
+}
+#floating_side_menu>.hamburger_trait{
+    border-color: #f4f4f4;
+}
+
+#floating_side_menu>.main>div{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    font-size: 40px;
+    margin-top: 5px;
+    user-select: none;
+}
+
+#floating_side_menu>.main>div:hover{
+    background-color: #5271ff;
+    cursor: pointer;
+    border: #5271ff solid 1px;
+    border-radius: 10px;
+}
+
+.cross{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    width: 50px;
+    height: 50px;
+}
+.cross:hover{
+    cursor: pointer;
+    border: white solid 2px;
+    border-radius: 100%;
+}
+
+main {
+    padding-left: 10px;
+    height: 80vh;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+main>div{
+    width: 50vh;
+    padding: 20px;
+}
+.robot>img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.the_block{
+    padding: 20px;
+    border: #d9d9d9 2px solid;
+    border-radius: 20px;
+    background-color: #d9d9d9;
+}
+
+#history_text{
+    display: none;
+    visibility: hidden;
+}
+
+#math_zone{
+    display: none;
+    visibility: hidden;
+}
+#list_exos{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    padding-bottom: 20px;
+}
+#list_exos>div{
+    padding: 20px;
+    border-radius: 10px;
+    user-select: none;
+}
+.locked{
+    background-color: #d9d9d9; 
+    border: none;
+}
+.selected{
+    background-color: #d9d9d9; 
+    border: #5271ff 2px solid;
+}
+.success{
+    background-color: #5271ff; 
+}
+#maths_btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: center;
+    padding: 20px;
+}
+#maths_btn>div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5271ff;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 20px;
+    width: 120px;
+    transition: all 0.2s ease-out;
+}
+#maths_btn>div:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.exercice{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+}
+
+.answer_area{
+    text-align: center;
+    border: none;
+    border-bottom: solid #5271ff 1px;
+    width:20px;
+    height: 20px;
+    resize: none;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+

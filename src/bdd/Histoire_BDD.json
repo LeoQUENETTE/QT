@@ -1,0 +1,33 @@
+{
+    "stories_en": { 
+        "number_of_stories": 2,
+        "language": "English",
+        "list" : [
+            {
+                "title": "The Whispering Forest",
+                "content": "Deep in the heart of the old forest, a whispering voice could be heard. It was neither the wind nor an animal, but something ancient and mysterious. A young girl named Elara wandered into the woods, drawn by the eerie sound. Her grandmother had always warned her about the whispering trees, saying they held the wisdom of lost souls. But Elara, full of curiosity, followed the voice until she reached an enormous oak. The whispers grew louder, forming words only she could understand. 'Find the silver key,' they said. She reached into the hollow of the tree and felt something cold. A key. A silver key, just as the voice had spoken. Holding it tightly, she turned to leave, but the woods had changed. The path was gone, replaced by an endless sea of trees. Elara took a deep breath and stepped forward, determined to uncover the secret of the whispering forest."
+            },
+            {
+                "title": "The Clockmaker's Secret",
+                "content": "In the small town of Eldershire, a mysterious clockmaker named Tobias lived in solitude. His shop was filled with the most intricate timepieces, yet none had ever seen him sell a single one. One evening, young Henry entered the shop, drawn by a peculiar clock that seemed to tick backwards. 'That one is not for sale,' Tobias said firmly. But Henry's curiosity was insatiable. That night, he snuck back into the shop and turned the key on the backward clock. The hands spun wildly, and in an instant, Henry found himself in the past—watching his own grandfather as a child. The secret was clear: Tobias' clocks were portals through time. Now, Henry had a choice—return to his present or explore the mysteries of time itself."
+            }
+        ]
+    },
+    "stories_fr": { 
+        "list" : [
+            {
+            "title": "La Forêt Murmurante",
+            "content": "Au cœur de l'ancienne forêt, une voix murmurante se faisait entendre. Ce n'était ni le vent ni un animal, mais quelque chose d'ancien et de mystérieux. Une jeune fille nommée Elara s'aventura dans les bois, attirée par ce son étrange. Sa grand-mère l'avait toujours mise en garde contre les arbres murmurants, disant qu'ils détenaient la sagesse des âmes perdues. Mais Elara, curieuse, suivit la voix jusqu'à un énorme chêne. Les murmures s'intensifièrent, formant des mots qu'elle seule pouvait comprendre. 'Trouve la clé d'argent', disaient-ils. Elle plongea la main dans le creux de l'arbre et sentit un objet froid. Une clé. Une clé d'argent, comme l'avaient annoncé les voix. La serrant fermement, elle se retourna pour partir, mais la forêt avait changé. Le sentier avait disparu, remplacé par une mer infinie d'arbres. Elara prit une profonde inspiration et avança, déterminée à découvrir le secret de la forêt murmurante."
+            },
+            {
+            "title": "Le Secret de l'Horloger",
+            "content": "Dans la petite ville d'Eldershire, un horloger mystérieux nommé Tobias vivait en solitaire. Son atelier était rempli des horloges les plus complexes, mais personne ne l'avait jamais vu en vendre une seule. Un soir, le jeune Henry entra dans la boutique, attiré par une horloge étrange dont les aiguilles tournaient à l'envers. 'Celle-ci n'est pas à vendre', dit Tobias fermement. Mais la curiosité d'Henry était insatiable. Cette nuit-là, il retourna en douce dans la boutique et tourna la clé de l'horloge inversée. Les aiguilles tournèrent follement et, en un instant, Henry se retrouva dans le passé—voyant son propre grand-père enfant. Le secret était révélé : les horloges de Tobias étaient des portails temporels. Maintenant, Henry avait un choix—revenir à son présent ou explorer les mystères du temps lui-même."
+            }
+        ],
+        "number_of_stories": 2,
+        "language": "Français"
+    }
+  }
+
+  
+  

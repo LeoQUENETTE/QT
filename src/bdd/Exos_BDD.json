@@ -1,0 +1,8 @@
+{
+    "type":"Maths",
+    "nb_exos" : 2,
+    "exercices" : [
+        {"equation1": "5 + ", "equation2" : " = 12", "reponse" : "7"},
+        {"equation1": "5 + ", "equation2" : " = 15", "reponse" : "10"}
+    ]
+}

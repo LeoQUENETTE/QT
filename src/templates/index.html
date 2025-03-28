@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page avec Robot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div id="floating_side_menu" >
+        <div class="header">
+            <h1 class="title">Menu</h1>
+            <span id="menu_cross" class="cross">&times;</span>
+        </div>
+        <div class="hamburger_trait"></div>
+        <div class="main">
+            <div id="help_btn">
+                <span id="icone">&times;</span>
+                <p>Assistance</p>
+            </div>
+            <div id="lang_btn">
+                <span id="icone">&times;</span>
+                <p>Langue</p>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <header>
+            <div id="hamburger_btn" class="hamburger">
+                <div class="hamburger_trait"></div>
+                <div class="hamburger_trait"></div>
+                <div class="hamburger_trait"></div>
+            </div>
+            <div class="menu">
+                <div class="menu_btn" id="histoire_btn">Histoire</div>
+                <div class="menu_btn" id="math_btn">Math</div>
+            </div>
+        </header>
+
+        <main>
+            <div>
+                {% include 'popup.html' %}
+            </div>
+            <div class="robot">
+                <img src="{{ url_for('static', filename='images/image.png') }}" alt="Description of image" class="main-image">
+            </div>
+            <div class="the_block" id="history_text">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa facere, sed aspernatur iure natus velit nobis architecto harum dolorum, voluptatum amet voluptatibus exercitationem sint, delectus non soluta? Distinctio, modi rerum?</p>
+            </div>
+            <div calss="" id="math_zone">
+                <div id="list_exos">
+                </div>
+                <div class="exercice" id="exo">
+                    <p>5 + </p>
+                    <textarea id="answer" class="answer_area">?</textarea>
+                    <p> = 12</p>
+                </div>
+                <div id="maths_btn">
+                    <div id="retour_btn" style="display:none">Retour</div>
+                    <div id="valider_btn">Valider</div>
+                </div>
+            </div>
+
+            
+        </main>
+
+        <footer></footer>
+    </div>
+
+    <script type="module" src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
