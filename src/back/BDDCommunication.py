@@ -66,7 +66,7 @@ class BDDCommunication():
         self.exos : list[Exercice] = []
         data = self._openFile(self.exosFileName)
         for ex in data["exercices"]:
-            newExos = Exercice(ex["equation1"],ex["equation2"],ex["reponse"])
+            newExos = Exercice(ex["equation"],ex["answers"])
             self.exos.append(newExos)
         return self.exos
     def getStorie(self, storyTitle : str) -> Histoire:

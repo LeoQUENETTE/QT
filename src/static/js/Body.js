@@ -65,20 +65,23 @@ export default class Body{
             }
 
             //Create the exos
-            let equation1 = document.createElement("p");
-            let answer = document.createElement("textarea");
-            let equation2 = document.createElement("p");
-            
-            let actualAnswer = list_exos[0].reponse; 
-            equation1.innerHTML=list_exos[0].equation1;
-            equation2.innerHTML=list_exos[0].equation2;
-            answer.value="?";
-            answer.classList.add("answer_area");
-            answer.id = "answer"
+            let actualAnswer = []
+            equations = list_exos[0].equation.split("?")
+            for (let i = 0; i < equations.length; i++){
+                let equation = document.createElement("p");
+                let answer = document.createElement("textarea");
+                equation.innerHTML=equations[i];
+                answer.value="?";
+                answer.classList.add("answer_area");
+                answer.id = "answer"
 
-            exo.appendChild(equation1);
-            exo.appendChild(answer);
-            exo.appendChild(equation2);
+                actualAnswer.push(list_exos[0].answers[i])
+                exo.appendChild(equation);
+                exo.appendChild(answer);
+            }
+            
+
+            
             
             valider_btn.addEventListener("click", () => {
                 if (answer.value == actualAnswer){
@@ -89,8 +92,7 @@ export default class Body{
                     if (this.nb_exo_solved < nb){
                         answer.value="?";
                         actualAnswer = list_exos[this.nb_exo_solved].reponse;
-                        equation2.innerHTML = list_exos[this.nb_exo_solved].equation2;
-                        equation1.innerHTML = list_exos[this.nb_exo_solved].equation1;
+                        equation.innerHTML = list_exos[this.nb_exo_solved].equation;
 
                         let prec_div = div_list[this.nb_exo_solved - 1];
                         prec_div.classList.remove("selected")
@@ -123,4 +125,6 @@ export default class Body{
         }
         return true
     }
+
+
 }
