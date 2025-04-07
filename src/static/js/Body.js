@@ -1,10 +1,12 @@
+import {Exercices, Exercice} from "./Exercices.js";
+
 export default class Body{
     constructor (homePage){
         this.history_txt = document.getElementById("history_text");
         this.math_zone = document.getElementById("math_zone");
         this.help_btn_panel = document.getElementById("help_btn");
         this.lang_btn_panel = document.getElementById("lang_btn");
-        this.nb_exo_solved = 0;
+        this.retour_btn = document.getElementById("retour_btn");
 
         this.help_btn_panel.addEventListener("click", () => {
             this.help_btn_handler(homePage);
@@ -33,98 +35,89 @@ export default class Body{
 
         this.history_txt.textContent = history
     }
+    generation_math_exos(list_exos){
+        this.history_txt.style.display = "none";
+        this.history_txt.style.visibility = "hidden";
+        this.math_zone.style.display = "block";
+        this.math_zone.style.visibility = "visible";
 
-    generation_math_exos(nb, list_exos){
-        if (nb > 0){            
-            this.history_txt.style.display = "none";
-            this.history_txt.style.visibility = "hidden";
+        let exoHTML = document.getElementById("exo");
+        let valider_btn = document.getElementById("valider_btn");
 
-            this.math_zone.style.display = "block";
-            this.math_zone.style.visibility = "visible";
-            //Get relevant element
-            let math_list = document.getElementById("list_exos");
-            let exo = document.getElementById("exo");
-            let valider_btn = document.getElementById("valider_btn");
-            let retour_btn = document.getElementById("retour_btn");
-            let div_list = [];
-            math_list.innerHTML = '';
-            exo.innerHTML = '';
-
-            //Create the litle boxes above the exercises
-            for (let index = 0; index < nb; index++) {
-                const new_div = document.createElement("div");
-                if (index == 0){
-                    new_div.classList.add("selected");
-                }
-                else{
-                    new_div.classList.add("locked");
-                }
-                new_div.innerText = index + 1;
-                math_list.appendChild(new_div);
-                div_list.push(new_div);
+        let exercices = new Exercices(list_exos);
+        let mathExosBox = this.generateExosBox(exercices.nbExos, exoHTML);
+        this.generateEquation(exercices, exoHTML);
+        
+        valider_btn.addEventListener("click", () => {
+            if (!exercices.allExerciceDone){
+                this.btnValidation(exercices, mathExosBox)
             }
-
-            //Create the exos
-            let actualAnswer = []
-            equations = list_exos[0].equation.split("?")
-            for (let i = 0; i < equations.length; i++){
-                let equation = document.createElement("p");
+            if (!exercices.allExerciceDone){
+                exoHTML.innerHTML = ""
+                this.generateEquation(exercices, exoHTML);
+            }
+        })
+    }
+    generateEquation(exercices,exoHTML){
+        let exo = exercices.actualExo;
+        for (let i = 0; i < exo.nb_equations; i++){
+            let equation = document.createElement("p");
+            equation.id = "equation"+i
+            equation.innerHTML=exo.equations[i];
+            exoHTML.appendChild(equation);
+            if (i < exo.nb_equations - 1){
                 let answer = document.createElement("textarea");
-                equation.innerHTML=equations[i];
                 answer.value="?";
                 answer.classList.add("answer_area");
-                answer.id = "answer"
-
-                actualAnswer.push(list_exos[0].answers[i])
-                exo.appendChild(equation);
-                exo.appendChild(answer);
-            }
-            
-
-            
-            
-            valider_btn.addEventListener("click", () => {
-                if (answer.value == actualAnswer){
-                    this.nb_exo_solved += 1;
-                    if (this.nb_exo_solved == 1){
-                        retour_btn.style.display = "flex";
-                    }
-                    if (this.nb_exo_solved < nb){
-                        answer.value="?";
-                        actualAnswer = list_exos[this.nb_exo_solved].reponse;
-                        equation.innerHTML = list_exos[this.nb_exo_solved].equation;
-
-                        let prec_div = div_list[this.nb_exo_solved - 1];
-                        prec_div.classList.remove("selected")
-                        prec_div.classList.add("success")
-                        let new_div = div_list[this.nb_exo_solved];
-                        new_div.classList.add("selected")
-                        new_div.classList.remove("locked")
-                    }else{
-                        console.log("Plus d'exos GG !")
-                    }
-                }else if(answer.value == ""){
-                    //TODO Error msg if the value is empty
-                    console.log("Can't have an empty answer")
-                }else if (this.notANumber(answer.value)){
-                    //TODO Error msg if the value not a number
-                    console.log("Not a number !")
-                }else {
-                    //TODO Error msg if the value is not the one desired
-                    console.log("Bad answer")
-                }
-            })
-        }
-    }
-    notANumber(input){
-        for (let index = 0; index < input.length; index++){
-            const e = input[index];
-            if (e == 0 || e == 1 || e == 2 || e == 3 || e == 4 || e == 5 || e == 6 || e == 7 || e == 8 || e == 9){
-                return false
+                answer.id = "answer"+i;
+                answer.addEventListener("input",() => {
+                    exo.userAnswers[i] = answer.value
+                })
+                exoHTML.appendChild(answer);
             }
         }
-        return true
     }
 
-
+    generateExosBox(nb, exo){
+        let math_list = document.getElementById("list_exos");
+        math_list.innerHTML = '';
+        exo.innerHTML = '';
+        let div_list = [];
+        //Create the litle boxes above the exercises
+        for (let index = 0; index < nb; index++) {
+            const new_div = document.createElement("div");
+            if (index == 0){
+                new_div.classList.add("selected");
+            }
+            else{
+                new_div.classList.add("locked");
+            }
+            new_div.innerText = index + 1;
+            math_list.appendChild(new_div);
+            div_list.push(new_div);
+        }
+        return div_list
+    }
+    btnValidation(exercices, mathExosBox){
+        let goodAnswer = exercices.actualExo.checkAnswers();
+        let valider_btn = document.getElementById("valider_btn");
+        let errorArea = document.getElementById("errorArea");
+        errorArea.classList.add("invisible");
+        if (goodAnswer){
+            valider_btn.classList.remove("error");
+            exercices.nextExercice();
+            mathExosBox[exercices.nbSolvedExos - 1].classList.remove("selected");
+            mathExosBox[exercices.nbSolvedExos - 1].classList.add("success");
+            if (!exercices.allExerciceDone){
+                this.retour_btn.style.display = "flex";
+                mathExosBox[exercices.nbSolvedExos].classList.add("selected")           
+            }else{
+                console.log("Plus d'exos GG !")
+            }
+        }else{
+            valider_btn.classList.add("error");
+            errorArea.textContent=exercices.actualExo.errorName;
+            errorArea.classList.remove("invisible");
+        }
+    }
 }
