@@ -63,7 +63,7 @@ export default class Body{
         for (let i = 0; i < exo.nb_equations; i++){
             let equation = document.createElement("p");
             equation.id = "equation"+i
-            equation.innerHTML=exo.equations[i];
+            equation.innerHTML=exo.splitedEquations[i];
             exoHTML.appendChild(equation);
             if (i < exo.nb_equations - 1){
                 let answer = document.createElement("textarea");

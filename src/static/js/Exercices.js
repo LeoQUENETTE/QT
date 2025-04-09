@@ -29,40 +29,63 @@ export class Exercices{
 
 export class Exercice{
     constructor(exo){
-        this.equations = exo.equation.split("?");
-        this.nb_equations = this.equations.length;
+        this.equation = exo.equation
+        this.splitedEquations = exo.equation.split("?");
+        this.nb_equations = this.splitedEquations.length;
         this.actualAnswers = exo.answers;
         this.userAnswers = new Array(this.nb_equations);
         this.userAnswers.fill(0)
         this.errorName = "No error";
     }
 
-    checkAnswers(){
-        let nbGoodAnwser = 0;
-        this.errorName = "No error";
-        for (let i = 0; i < this.actualAnswers.length; i++){
-            let answer = this.actualAnswers[i]
-            let uAnswer = this.userAnswers[i]
-            if (uAnswer == answer && nbGoodAnwser == this.actualAnswers.length - 1){
-                return true;
+    checkAnswers() {
+        console.log(this.equation);
+        const [left, right] = this.equation.split('=').map(s => s.trim());
+        
+        let answerIndex = 0;
+        let error = false;
+        let evaluatedLeft = "";
+    
+        // Replace each '?' in the left side with userAnswers
+        evaluatedLeft = left.replace(/\?/g, (match) => {
+            const userAnswer = this.userAnswers[answerIndex];
+    
+            if (userAnswer === "" || userAnswer === "?") {
+                this.errorName = "Please answer every part of the question";
+                error = true;
+                return match; // Keep ? as placeholder, since there's an error
             }
-            if(uAnswer == "" || uAnswer =="?"){
-                this.errorName = "No value passed"
-                return false;
+    
+            if (this.notANumber(userAnswer)) {
+                this.errorName = "Please put a valid answer";
+                error = true;
+                return match; // Same here
             }
-            if (this.notANumber(uAnswer)){
-                this.errorName = "Not a number"
-                return false;
+    
+            const replacement = userAnswer;
+            answerIndex++;
+            return replacement;
+        });
+    
+        if (error) {
+            return false;
+        }
+    
+        try {
+            const leftResult = eval(evaluatedLeft);
+            const rightResult = parseInt(right, 10);
+            const equal = leftResult === rightResult
+            if (!equal){
+                this.errorName="Bad answer";
             }
-            if (uAnswer == answer && nbGoodAnwser != this.actualAnswers.length){
-                nbGoodAnwser = nbGoodAnwser + 1
-            }else{
-                this.errorName = "Bad answer";
-                return false;
-            }
+            return equal;
+        } catch (e) {
+            this.errorName = "Something went wrong during evaluation";
+            return false;
         }
     }
-
+    
+    
     notANumber(input){
         for (let index = 0; index < input.length; index++){
             const e = input[index];
