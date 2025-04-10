@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page avec Robot</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/popup_style.css') }}">
 </head>
 <body>
-    <div id="floating_side_menu" >
+    <div id="floating_side_menu" class="invisible">
         <div class="header">
             <h1 class="title">Menu</h1>
             <span id="menu_cross" class="cross">&times;</span>
@@ -17,10 +18,6 @@
             <div id="help_btn">
                 <span id="icone">&times;</span>
                 <p>Assistance</p>
-            </div>
-            <div id="lang_btn">
-                <span id="icone">&times;</span>
-                <p>Langue</p>
             </div>
         </div>
     </div>
@@ -39,6 +36,10 @@
         </header>
 
         <main>
+            <div id="popup_menu" class="invisible">
+                <h1>Vous avez terminé tous les exercices félicitations !</h1><p>Vous pouvez cliquer ci dessous pour rafraichir la page.</p>
+                <button id="popup_btn">OK</button>
+            </div>
             <div class="robot">
                 <img src="{{ url_for('static', filename='images/image.png') }}" alt="Description of image" class="main-image">
             </div>

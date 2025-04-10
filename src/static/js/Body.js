@@ -112,7 +112,12 @@ export default class Body{
                 this.retour_btn.style.display = "flex";
                 mathExosBox[exercices.nbSolvedExos].classList.add("selected")           
             }else{
-                console.log("Plus d'exos GG !")
+                let popup = document.getElementById("popup_menu");
+                popup.classList.remove("invisible")
+                let popup_btn = document.getElementById("popup_btn");
+                popup_btn.addEventListener("click", () => {
+                    location.reload()
+                })                
             }
         }else{
             valider_btn.classList.add("error");
