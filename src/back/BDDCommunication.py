@@ -10,6 +10,7 @@ class BDDCommunication():
     
     stories : list[Histoire]
     exos : list[Exercice]
+    nbExos : int = 5
     def __init__(self, srcJsonBDD : str, storyFileName :str, exosFileName : str):
         self.srcBDD = srcJsonBDD
         self.storyFileName = storyFileName
@@ -43,7 +44,14 @@ class BDDCommunication():
         return {}
     
     def getExosJson(self) -> dict:
-        return self._openFile(self.exosFileName)
+        equations = self.getExos()
+        exercise_data = {
+            "type": "Maths",
+            "nb_exos": len(equations),
+            "exercices": [{"equation": eq.equation} for eq in equations]
+        }
+        json_string = json.dumps(exercise_data, indent=4)
+        return json_string
         
     # Methode de récupération des éléments dans le JSON
     
@@ -64,10 +72,10 @@ class BDDCommunication():
         return stories
     def getExos(self) -> list[Exercice]:
         self.exos : list[Exercice] = []
-        data = self._openFile(self.exosFileName)
-        for ex in data["exercices"]:
-            newExos = Exercice(ex["equation"],ex["answers"])
-            self.exos.append(newExos)
+        for i in range(self.nbExos):
+            exo = Exercice()
+            exo.generateExercice(3,3)
+            self.exos.append(exo)
         return self.exos
     def getStorie(self, storyTitle : str) -> Histoire:
         pass

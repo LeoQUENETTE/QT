@@ -32,7 +32,7 @@ export default class Header{
             if (data.type == "Maths"){
                 this.math_btn.style.background= headerSelectedColor;
                 this.history_btn.style.background= headerBaseColor;
-                homePage.main = new Body(homePage).generation_math_exos(data.nb_exos, data.exercices);
+                homePage.main = new Body(homePage).generation_math_exos(data.exercices);
             }else{
                 homePage.selectedMode = "";
             }
