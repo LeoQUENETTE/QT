@@ -1,0 +1,15 @@
+# Python
+*.pyc
+__pycache__/
+
+# Virtual Environments
+venv/
+*.env
+
+# Editor directories
+.vscode/
+.idea/
+
+# Deployment files
+dist/
+build/
