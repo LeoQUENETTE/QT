@@ -210,6 +210,7 @@ main>div{
     padding: 20px;
     width: 120px;
     transition: all 0.2s ease-out;
+    text-align: center;
 }
 #maths_btn>div:hover{
     transform: scale(1.1);

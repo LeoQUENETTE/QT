@@ -74,7 +74,7 @@ class BDDCommunication():
         self.exos : list[Exercice] = []
         for i in range(self.nbExos):
             exo = Exercice()
-            exo.generateExercice(3,3)
+            exo.generateExercicePos(3,3)
             self.exos.append(exo)
         return self.exos
     def getStorie(self, storyTitle : str) -> Histoire:
