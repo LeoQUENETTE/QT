@@ -1,10 +1,10 @@
 # Description
 
-Il s'agit d'un projet développé par l'équipe template pourris™:
-    Maksym Lytvynenko
-    Léonard Rivals
-    Léo Quenette
-    Matis Bazireau
+Il s'agit d'un projet développé par l'équipe template pourris™
+* Maksym Lytvynenko
+* Léonard Rivals
+* Léo Quenette
+* Matis Bazireau
  
 
 Dans le cadre de l'UE gestion de projet, la réalisation de l'exercice suivant nous as été demandé.
