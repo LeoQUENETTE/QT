@@ -5,25 +5,14 @@ export default class Body{
         this.history_txt = document.getElementById("history_text");
         this.math_zone = document.getElementById("math_zone");
         this.help_btn_panel = document.getElementById("help_btn");
-        this.lang_btn_panel = document.getElementById("lang_btn");
         this.retour_btn = document.getElementById("retour_btn");
+        this.state = "normal";
 
         this.help_btn_panel.addEventListener("click", () => {
             this.help_btn_handler(homePage);
         })
-        this.lang_btn_panel.addEventListener("click", () => {
-            this.lang_btn_handler(homePage);
-        })
     }
 
-    help_btn_handler(homePage){}
-    async lang_btn_handler(homePage){
-        let json = await homePage.httpGet("/lang?lang=Français")
-        await json.json()
-        .then((data) => {
-            console.log(data.lang)
-        });
-    }
     
 
     generate_history(history){
@@ -102,8 +91,21 @@ export default class Body{
         let goodAnswer = exercices.actualExo.checkAnswers();
         let valider_btn = document.getElementById("valider_btn");
         let errorArea = document.getElementById("errorArea");
+        let qtImage = document.getElementById("robot_image");
+        let errorPopup = document.getElementById("error_menu");
+        let errorBtn = document.getElementById("error_btn");
+        errorBtn.addEventListener("click", () => {
+            errorPopup.classList.add("invisible");
+        })
         errorArea.classList.add("invisible");
         if (goodAnswer){
+            if(this.state == "normal" || this.state == "veryHappy"){
+                this.state == "veryHappy";
+                qtImage.src = "static/images/veryHappyQT.png"
+            }else{
+                this.state = "normal";
+                qtImage.src = "static/images/baseQT.png"
+            }
             valider_btn.classList.remove("error");
             exercices.nextExercice();
             mathExosBox[exercices.nbSolvedExos - 1].classList.remove("selected");
@@ -123,6 +125,18 @@ export default class Body{
             valider_btn.classList.add("error");
             errorArea.textContent=exercices.actualExo.errorName;
             errorArea.classList.remove("invisible");
+            if (exercices.actualExo.errorName == "Bad answer"){
+                let errorExplanation = document.getElementById("error_explain");
+                errorPopup.classList.remove("invisible");
+                errorExplanation.innerHTML = exercices.actualExo.evaluatedLeft + "= " + exercices.actualExo.leftResult
+            }
+            if (this.state == "normal" || this.state == "veryHappy"){
+                this.state = "disapointed";
+                qtImage.src = "static/images/disapointedQT.png"
+            }else if(this.state == "disapointed"){
+                this.state == "angry";
+                qtImage.src = "static/images/angryQT.png"
+            }
         }
     }
 

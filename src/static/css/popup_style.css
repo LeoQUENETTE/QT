@@ -1,5 +1,5 @@
 
-#popup_menu{
+.popup_menu{
   position: absolute;
   width: fit-content;
   height: fit-content;
@@ -11,18 +11,18 @@
   text-align: center;
 }
 
-#popup_menu>*{
+.popup_menu>*{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
 }
 
-#popup_menu>button{
+.popup_menu>button{
   margin:10px;
   padding: 0px 10px 0px 10px;
   text-align: center;
 }
 
-#popup_menu>h1{
+.popup_menu>h1{
   margin-bottom:10px;
   font-size: 20px;
 }
