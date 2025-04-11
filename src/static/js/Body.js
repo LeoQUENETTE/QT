@@ -5,25 +5,13 @@ export default class Body{
         this.history_txt = document.getElementById("history_text");
         this.math_zone = document.getElementById("math_zone");
         this.help_btn_panel = document.getElementById("help_btn");
-        this.lang_btn_panel = document.getElementById("lang_btn");
         this.retour_btn = document.getElementById("retour_btn");
 
         this.help_btn_panel.addEventListener("click", () => {
             this.help_btn_handler(homePage);
         })
-        this.lang_btn_panel.addEventListener("click", () => {
-            this.lang_btn_handler(homePage);
-        })
     }
 
-    help_btn_handler(homePage){}
-    async lang_btn_handler(homePage){
-        let json = await homePage.httpGet("/lang?lang=Français")
-        await json.json()
-        .then((data) => {
-            console.log(data.lang)
-        });
-    }
     
 
     generate_history(history){
