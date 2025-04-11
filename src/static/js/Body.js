@@ -6,7 +6,6 @@ export default class Body{
         this.math_zone = document.getElementById("math_zone");
         this.help_btn_panel = document.getElementById("help_btn");
         this.retour_btn = document.getElementById("retour_btn");
-        this.state = "normal";
 
         this.help_btn_panel.addEventListener("click", () => {
             this.help_btn_handler(homePage);
@@ -56,7 +55,7 @@ export default class Body{
             exoHTML.appendChild(equation);
             if (i < exo.nb_equations - 1){
                 let answer = document.createElement("textarea");
-                answer.value="?";
+                answer.value="";
                 answer.classList.add("answer_area");
                 answer.id = "answer"+i;
                 answer.addEventListener("input",() => {
@@ -87,58 +86,78 @@ export default class Body{
         }
         return div_list
     }
-    btnValidation(exercices, mathExosBox){
+    btnValidation(exercices, mathExosBox) {
         let goodAnswer = exercices.actualExo.checkAnswers();
         let valider_btn = document.getElementById("valider_btn");
         let errorArea = document.getElementById("errorArea");
-        let qtImage = document.getElementById("robot_image");
+        let next_btn = document.getElementById("next_btn");
+        let feedbackImage = document.getElementById("feedbackImage");
         let errorPopup = document.getElementById("error_menu");
         let errorBtn = document.getElementById("error_btn");
         errorBtn.addEventListener("click", () => {
             errorPopup.classList.add("invisible");
         })
+    
         errorArea.classList.add("invisible");
-        if (goodAnswer){
-            if(this.state == "normal" || this.state == "veryHappy"){
-                this.state == "veryHappy";
-                qtImage.src = "static/images/veryHappyQT.png"
-            }else{
-                this.state = "normal";
-                qtImage.src = "static/images/baseQT.png"
-            }
+        next_btn.style.display = "none";
+    
+        if (goodAnswer) {
+            feedbackImage.src = "/static/images/correct.png";
+            console.log("Image changée vers : " + feedbackImage.src);
             valider_btn.classList.remove("error");
-            exercices.nextExercice();
-            mathExosBox[exercices.nbSolvedExos - 1].classList.remove("selected");
-            mathExosBox[exercices.nbSolvedExos - 1].classList.add("success");
-            if (!exercices.allExerciceDone){
-                this.retour_btn.style.display = "flex";
-                mathExosBox[exercices.nbSolvedExos].classList.add("selected")           
-            }else{
-                let popup = document.getElementById("popup_menu");
-                popup.classList.remove("invisible")
-                let popup_btn = document.getElementById("popup_btn");
-                popup_btn.addEventListener("click", () => {
-                    location.reload()
-                })                
-            }
-        }else{
-            valider_btn.classList.add("error");
-            errorArea.textContent=exercices.actualExo.errorName;
+            errorArea.textContent = "Bonne réponse !";
+            errorArea.style.color = "green";
             errorArea.classList.remove("invisible");
-            if (exercices.actualExo.errorName == "Erreur"){
+    
+            valider_btn.style.display = "none";
+            next_btn.style.display = "block";
+    
+            next_btn.addEventListener("click", () => {
+                next_btn.style.display = "none";
+                errorArea.classList.add("invisible");
+                valider_btn.style.display = "block";
+                
+                feedbackImage.src = "/static/images/neutre.png";
+                console.log("Image remise à : " + feedbackImage.src);
+                
+                exercices.nextExercice();
+                mathExosBox[exercices.nbSolvedExos - 1].classList.remove("selected");
+                mathExosBox[exercices.nbSolvedExos - 1].classList.add("success");
+                
+                this.retour_btn.style.display = "none";
+                
+                if (!exercices.allExerciceDone) {
+                    mathExosBox[exercices.nbSolvedExos].classList.add("selected");
+                } else {
+                    let popup = document.getElementById("popup_menu");
+                    popup.classList.remove("invisible");
+                    let popup_btn = document.getElementById("popup_btn");
+                    popup_btn.addEventListener("click", () => {
+                        location.reload();
+                    });
+                }
+                
+                let exoHTML = document.getElementById("exo");
+                exoHTML.innerHTML = "";
+                this.generateEquation(exercices, exoHTML);
+            }, { once: true });
+        } else {
+            feedbackImage.src = "/static/images/incorrect.png";
+            console.log("Image changée vers : " + feedbackImage.src);
+            valider_btn.classList.add("error");
+            errorArea.textContent = exercices.actualExo.errorName;
+            errorArea.style.color = "red";
+            errorArea.classList.remove("invisible");
+            console.log(exercices.actualExo.errorName);
+            if (exercices.actualExo.errorName == "Mauvaise réponse"){
                 let errorExplanation = document.getElementById("error_explain");
                 errorPopup.classList.remove("invisible");
                 errorExplanation.innerHTML = exercices.actualExo.evaluatedLeft + "= " + exercices.actualExo.leftResult
             }
-            if (this.state == "normal" || this.state == "veryHappy"){
-                this.state = "disapointed";
-                qtImage.src = "static/images/disapointedQT.png"
-            }else if(this.state == "disapointed"){
-                this.state == "angry";
-                qtImage.src = "static/images/angryQT.png"
-            }
         }
     }
-
-
-}
+    
+ }
+    
+    
+    

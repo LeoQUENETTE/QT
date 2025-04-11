@@ -35,7 +35,7 @@ export class Exercice{
         this.actualAnswers = exo.answers;
         this.userAnswers = new Array(this.nb_equations);
         this.userAnswers.fill(0)
-        this.errorName = "Pas d'erreur";
+        this.errorName = "No error";
         this.leftResult = ""
         this.evaluatedLeft = ""
     }
@@ -53,13 +53,13 @@ export class Exercice{
             const userAnswer = this.userAnswers[answerIndex];
     
             if (userAnswer === "" || userAnswer === "?") {
-                this.errorName = "Une réponse ne peut rester vide.";
+                this.errorName = "Répondez à toute la question";
                 error = true;
                 return match; // Keep ? as placeholder, since there's an error
             }
     
             if (this.notANumber(userAnswer)) {
-                this.errorName = "Veuillez mettre une valeur valide.";
+                this.errorName = "Entrez une réponse valdie";
                 error = true;
                 return match; // Same here
             }
@@ -78,13 +78,13 @@ export class Exercice{
             const rightResult = parseInt(right, 10);
             const equal = leftResult === rightResult
             if (!equal){
-                this.errorName="Erreur";
+                this.errorName="Mauvaise réponse";
                 this.leftResult = leftResult;
                 this.evaluatedLeft = evaluatedLeft;
             }
             return equal;
         } catch (e) {
-            this.errorName = "Une erreur est survenu au cour de l'évaluation de la réponse, veuillez réessayer.";
+            this.errorName = "SIl y a eu un problème pendant l'évaluation";
             return false;
         }
     }

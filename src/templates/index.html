@@ -36,8 +36,9 @@
         </header>
 
         <main>
-            <div id="popup_menu" class="popup_menu invisible">
-                <h1>Vous avez terminé tous les exercices félicitations !</h1><p>Vous pouvez cliquer ci dessous pour rafraichir la page.</p>
+            <div id="popup_menu" class="invisible">
+                <h1>Vous avez terminé tous les exercices félicitations !</h1>
+                <p>Vous pouvez cliquer ci dessous pour rafraichir la page.</p>
                 <button id="popup_btn">OK</button>
             </div>
             <div id="error_menu" class="popup_menu invisible">
@@ -45,14 +46,13 @@
                 <button id="error_btn">OK</button>
             </div>
             <div class="robot">
-                <img id="robot_image" src="{{ url_for('static', filename='images/baseQT.png') }}" alt="Description of image" class="main-image">
-            </div>
+                <img id="feedbackImage" src="{{ url_for('static', filename='images/neutre.png') }}" alt="Description of image" class="main-image">
+            </div>            
             <div class="the_block" id="history_text">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa facere, sed aspernatur iure natus velit nobis architecto harum dolorum, voluptatum amet voluptatibus exercitationem sint, delectus non soluta? Distinctio, modi rerum?</p>
             </div>
-            <div calss="" id="math_zone">
-                <div id="list_exos">
-                </div>
+            <div id="math_zone">
+                <div id="list_exos"></div>
                 <div class="exercice" id="exo">
                     <p>5 + </p>
                     <textarea id="answer" class="answer_area">?</textarea>
@@ -62,10 +62,9 @@
                 <div id="maths_btn">
                     <div id="retour_btn" style="display:none">Retour</div>
                     <div id="valider_btn">Valider</div>
+                    <div id="next_btn" style="display:none">Suivant</div>
                 </div>
             </div>
-
-            
         </main>
 
         <footer></footer>
