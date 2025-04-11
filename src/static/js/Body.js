@@ -125,7 +125,7 @@ export default class Body{
             valider_btn.classList.add("error");
             errorArea.textContent=exercices.actualExo.errorName;
             errorArea.classList.remove("invisible");
-            if (exercices.actualExo.errorName == "Bad answer"){
+            if (exercices.actualExo.errorName == "Erreur"){
                 let errorExplanation = document.getElementById("error_explain");
                 errorPopup.classList.remove("invisible");
                 errorExplanation.innerHTML = exercices.actualExo.evaluatedLeft + "= " + exercices.actualExo.leftResult
