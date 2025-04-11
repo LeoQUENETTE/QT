@@ -6,6 +6,7 @@ export default class Body{
         this.math_zone = document.getElementById("math_zone");
         this.help_btn_panel = document.getElementById("help_btn");
         this.retour_btn = document.getElementById("retour_btn");
+        this.state = "normal";
 
         this.help_btn_panel.addEventListener("click", () => {
             this.help_btn_handler(homePage);
@@ -90,8 +91,16 @@ export default class Body{
         let goodAnswer = exercices.actualExo.checkAnswers();
         let valider_btn = document.getElementById("valider_btn");
         let errorArea = document.getElementById("errorArea");
+        let qtImage = document.getElementById("robot_image"); 
         errorArea.classList.add("invisible");
         if (goodAnswer){
+            if(this.state == "normal" || this.state == "veryHappy"){
+                this.state == "veryHappy";
+                qtImage.src = "static/images/veryHappyQT.png"
+            }else{
+                this.state = "normal";
+                qtImage.src = "static/images/baseQT.png"
+            }
             valider_btn.classList.remove("error");
             exercices.nextExercice();
             mathExosBox[exercices.nbSolvedExos - 1].classList.remove("selected");
@@ -111,6 +120,13 @@ export default class Body{
             valider_btn.classList.add("error");
             errorArea.textContent=exercices.actualExo.errorName;
             errorArea.classList.remove("invisible");
+            if (this.state == "normal" || this.state == "veryHappy"){
+                this.state = "disapointed";
+                qtImage.src = "static/images/disapointedQT.png"
+            }else if(this.state == "disapointed"){
+                this.state == "angry";
+                qtImage.src = "static/images/angryQT.png"
+            }
         }
     }
 }

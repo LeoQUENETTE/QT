@@ -150,7 +150,7 @@ main>div{
     padding: 20px;
 }
 .robot>img{
-    width: 100%;
+    width: 140%;
     object-fit: cover;
     border-radius: 10px;
 }
