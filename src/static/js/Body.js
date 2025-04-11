@@ -91,7 +91,12 @@ export default class Body{
         let goodAnswer = exercices.actualExo.checkAnswers();
         let valider_btn = document.getElementById("valider_btn");
         let errorArea = document.getElementById("errorArea");
-        let qtImage = document.getElementById("robot_image"); 
+        let qtImage = document.getElementById("robot_image");
+        let errorPopup = document.getElementById("error_menu");
+        let errorBtn = document.getElementById("error_btn");
+        errorBtn.addEventListener("click", () => {
+            errorPopup.classList.add("invisible");
+        })
         errorArea.classList.add("invisible");
         if (goodAnswer){
             if(this.state == "normal" || this.state == "veryHappy"){
@@ -120,6 +125,11 @@ export default class Body{
             valider_btn.classList.add("error");
             errorArea.textContent=exercices.actualExo.errorName;
             errorArea.classList.remove("invisible");
+            if (exercices.actualExo.errorName == "Bad answer"){
+                let errorExplanation = document.getElementById("error_explain");
+                errorPopup.classList.remove("invisible");
+                errorExplanation.innerHTML = exercices.actualExo.evaluatedLeft + "= " + exercices.actualExo.leftResult
+            }
             if (this.state == "normal" || this.state == "veryHappy"){
                 this.state = "disapointed";
                 qtImage.src = "static/images/disapointedQT.png"
