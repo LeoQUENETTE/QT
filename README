@@ -28,3 +28,5 @@ Cela vous lancera une instance du site sur votre machine en local permettant de 
 # Information complémentaire
 
 Le site n'est pas mis en ligne suite a des complications lors de la mise en ligne sur Azure Cloud. Si une version en ligne est mis en ligne ce README sera mis à jour. De plus le site devait pouvoir présenté à la fois les fonctionnalités pour les histoires et les mathématiques mais au vu de la contrainte de temps cela n'a malheuresement pas été possible. Il est tout de fois possible de voir le début d'implémentation.
+
+Un système de difficulté est bien présent mais il n'a pas encore été relié à l'interface front.
