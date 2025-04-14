@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/popup_style.css') }}">
 </head>
+
 <body>
     <div id="floating_side_menu" class="invisible">
         <div class="header">
@@ -15,13 +17,18 @@
         </div>
         <div class="hamburger_trait"></div>
         <div class="main">
-            <div id="help_btn">
-                <span id="icone">&times;</span>
-                <p>Parametrage</p>
+            <!-- Ajout d'un bouton Accueil dans le menu -->
+            <div id="menu_home_btn" class="menu_item">
+                <span class="icon">🏠</span>
+                <p>Accueil</p>
+            </div>
+            <div id="help_btn" class="menu_item">
+                <span id="icone" class="icon">❓</span>
+                <p>Assistance</p>
             </div>
         </div>
     </div>
-    
+
     <div>
         <header>
             <div id="hamburger_btn" class="hamburger">
@@ -35,6 +42,7 @@
             </div>
         </header>
 
+        <!-- Remplacer la section main existante -->
         <main>
             <div id="popup_menu" class="popup_menu invisible">
                 <h1>Vous avez terminé tous les exercices félicitations !</h1>
@@ -42,35 +50,106 @@
                 <button id="popup_btn">OK</button>
             </div>
             <div id="error_menu" class="popup_menu invisible">
-                <h1>Erreur</h1><p id="error_explain"></p>
+                <h1>Erreur</h1>
+                <p id="error_explain"></p>
                 <button id="error_btn">OK</button>
             </div>
-            <div id="parametres_menu" class="popup_menu invisible">
-                <h1>Paramètres de difficultés</h1>
-                <div>
-                    <p>Niveau de difficultés</p>
-                    <
+
+            <!-- Nouvelle section pour la page d'accueil -->
+            <div id="home_content" class="content-container">
+                <div class="robot-container">
+                    <img id="homeImage" src="{{ url_for('static', filename='images/happy.png') }}" alt="Robot content"
+                        class="main-image">
                 </div>
-                <button id="ok_btn">OK</button>
-            </div>
-            <div class="robot">
-                <img id="feedbackImage" src="{{ url_for('static', filename='images/neutre.png') }}" alt="Description of image" class="main-image">
-            </div>            
-            <div class="the_block" id="history_text">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa facere, sed aspernatur iure natus velit nobis architecto harum dolorum, voluptatum amet voluptatibus exercitationem sint, delectus non soluta? Distinctio, modi rerum?</p>
-            </div>
-            <div id="math_zone">
-                <div id="list_exos"></div>
-                <div class="exercice" id="exo">
-                    <p>5 + </p>
-                    <textarea id="answer" class="answer_area">?</textarea>
-                    <p> = 12</p>
+
+                <div class="text-container">
+                    <div class="home-panels">
+                        <!-- Panel des histoires -->
+                        <div class="home-panel" id="stories-panel">
+                            <h2>Histoires disponibles</h2>
+                            <div class="language-tabs">
+                                <button class="lang-tab active" data-lang="fr">Français</button>
+                                <button class="lang-tab" data-lang="en">English</button>
+                            </div>
+                            <div class="stories-list" id="stories-list">
+                                <div class="lang-stories" id="fr-stories">
+                                    <!-- Les histoires en français seront chargées ici dynamiquement -->
+                                    <p class="loading">Chargement des histoires...</p>
+                                </div>
+                                <div class="lang-stories" id="en-stories" style="display: none;">
+                                    <!-- Les histoires en anglais seront chargées ici dynamiquement -->
+                                    <p class="loading">Loading stories...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel des scores de mathématiques -->
+                        <div class="home-panel" id="math-scores-panel">
+                            <h2>Derniers scores en mathématiques</h2>
+                            <div id="math-scores-list">
+                                <!-- Les scores seront chargés ici dynamiquement -->
+                                <p class="no-scores">Aucun exercice effectué récemment</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p id="errorArea" class="error invisible">No error</p>
-                <div id="maths_btn">
-                    <div id="retour_btn" style="display:none">Retour</div>
-                    <div id="valider_btn">Valider</div>
-                    <div id="next_btn" style="display:none">Suivant</div>
+            </div>
+
+            <div class="content-container" id="main-content-container" style="display: none;">
+                <div class="robot-container">
+                    <img id="feedbackImage" src="{{ url_for('static', filename='images/neutre.png') }}"
+                        alt="Description of image" class="main-image">
+                </div>
+
+                <div class="text-container">
+                    <div class="the_block" id="history_text">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa facere, sed aspernatur iure
+                            natus velit
+                            nobis architecto harum dolorum, voluptatum amet voluptatibus exercitationem sint, delectus
+                            non
+                            soluta? Distinctio, modi rerum?</p>
+                    </div>
+
+                    <div id="math_zone">
+                        <div id="list_exos"></div>
+                        <div class="exercice" id="exo">
+                            <p>5 + </p>
+                            <textarea id="answer" class="answer_area">?</textarea>
+                            <p> = 12</p>
+                        </div>
+                        <p id="errorArea" class="error invisible">No error</p>
+                        <div id="maths_btn">
+                            <div id="retour_btn" style="display:none">Retour</div>
+                            <div id="valider_btn">Valider</div>
+                            <div id="next_btn" style="display:none">Suivant</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Placer les contrôles d'histoire en bas -->
+            <div id="history_controls" style="display:none;">
+                <div class="history_navigation">
+                    <div id="story_prev_btn" class="story_nav_btn">
+                        <span>👈</span> Précédent
+                    </div>
+                    <div id="story_auto_btn" class="story_nav_btn">
+                        <span>🔄</span> Lecture Auto
+                    </div>
+                    <div id="story_stop_btn" class="story_nav_btn" style="display:none;">
+                        <span>⏹️</span> Arrêter
+                    </div>
+                    <div id="story_next_btn" class="story_nav_btn">
+                        Suivant <span>👉</span>
+                    </div>
+                </div>
+                <div class="language_switch">
+                    <span>Français</span>
+                    <label class="switch">
+                        <input type="checkbox" id="language_toggle">
+                        <span class="slider round"></span>
+                    </label>
+                    <span>English</span>
                 </div>
             </div>
         </main>
@@ -80,4 +159,5 @@
 
     <script type="module" src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
+
 </html>

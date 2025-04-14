@@ -1,0 +1,510 @@
+{
+  "title": "The Wolf Who Learned to Control His Emotions",
+  "language": "English",
+  "sentences": [
+    {
+      "text": "Once upon a time, there was a wolf who lived in a beautiful forest, surrounded by all his friends.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "His name was Wolf.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "But this wolf had a problem: he was too emotional.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Happy, angry, sad, excited... his mood changed a hundred times a minute!",
+      "emotions": [
+        "happy",
+        "sad",
+        "angry",
+        "surprised"
+      ]
+    },
+    {
+      "text": "So, when Wolf was in a joyful mood, he whistled with a light heart, cracked jokes, talked to the trees...",
+      "emotions": [
+        "happy"
+      ]
+    },
+    {
+      "text": "He was bursting with energy and full of fun ideas!",
+      "emotions": [
+        "happy"
+      ]
+    },
+    {
+      "text": "However, if something upset him… Oh no!",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "He would frown, explode, and send everyone away!",
+      "emotions": [
+        "angry"
+      ]
+    },
+    {
+      "text": "— You need to learn to calm down, Wolf, said Master Owl one day, exasperated.",
+      "emotions": [
+        "surprised",
+        "neutral"
+      ]
+    },
+    {
+      "text": "You're making us dizzy!",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "— Learn to calm down?",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "But why?",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "asked Wolf.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "— To be more peaceful!",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "But don’t worry, we’ll help you… We start tomorrow!",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "The next day, Wolf went to his friend’s house.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "— To control your emotions, yoga is perfect!",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "declared Master Owl.",
+      "emotions": [
+        "angry"
+      ]
+    },
+    {
+      "text": "Breathe calmly and clear your mind.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Master Owl flowed through the poses: lotus, mountain… and Wolf tried to copy him.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Oh dear!",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "It wasn’t easy, but it was so funny!",
+      "emotions": [
+        "happy"
+      ]
+    },
+    {
+      "text": "Unable to hold it in, Wolf burst out laughing.",
+      "emotions": [
+        "happy"
+      ]
+    },
+    {
+      "text": "— Seems like yoga doesn’t work for you, sighed Master Owl.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Outside, Alfred was waiting impatiently for Wolf.",
+      "emotions": [
+        "angry",
+        "neutral"
+      ]
+    },
+    {
+      "text": "— Nothing beats sport to let off steam, he said.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I’ve set up a special “Excited Wolf” course.",
+      "emotions": [
+        "surprised"
+      ]
+    },
+    {
+      "text": "Ready?",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "And off he shot like a rocket.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Behind him, Wolf was running, jumping, crawling…\nAlfred stopped at the foot of a huge tree.",
+      "emotions": [
+        "angry"
+      ]
+    },
+    {
+      "text": "— See you at the top!",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "he shouted as he disappeared into the leaves.",
+      "emotions": [
+        "angry"
+      ]
+    },
+    {
+      "text": "Once at the top, Wolf looked down… His throat tightened, his heart pounded in his chest, his legs trembled.",
+      "emotions": [
+        "scared"
+      ]
+    },
+    {
+      "text": "— Alfred, I’m scared!",
+      "emotions": [
+        "scared",
+        "angry"
+      ]
+    },
+    {
+      "text": "he panicked.",
+      "emotions": [
+        "scared"
+      ]
+    },
+    {
+      "text": "I’m going to fall!",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "— Calm down, Wolf.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I’m right here with you.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "We’ll climb down together, slowly.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Wolf took a deep breath and, trembling all over, climbed down.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "— You’ve conquered your fear—you can be proud of yourself!",
+      "emotions": [
+        "happy",
+        "scared",
+        "angry"
+      ]
+    },
+    {
+      "text": "Alfred congratulated him.",
+      "emotions": [
+        "happy",
+        "angry"
+      ]
+    },
+    {
+      "text": "Wolf smiled: oh yes, he was truly proud of himself!",
+      "emotions": [
+        "happy"
+      ]
+    },
+    {
+      "text": "All this made me hungry, thought Wolf.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "That’s perfect—Big Louie is waiting for me.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Covered in flour, Big Louie was in the kitchen with Lona.",
+      "emotions": [
+        "angry"
+      ]
+    },
+    {
+      "text": "— They look like they’re having so much fun together…, thought Wolf, jealous.",
+      "emotions": [
+        "happy",
+        "jealous"
+      ]
+    },
+    {
+      "text": "— Hi, Wolf!",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "said Big Louie.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Today we’re making macarons.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "To succeed with these treats, you have to be very, very patient.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "It's a great exercise for you, isn’t it?",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "At these words, Lona burst out laughing.",
+      "emotions": [
+        "happy"
+      ]
+    },
+    {
+      "text": "Wolf felt his temper rising.",
+      "emotions": [
+        "angry"
+      ]
+    },
+    {
+      "text": "He turned red, stomped his foot and exploded:\n— That’s right, go ahead and make fun of me!",
+      "emotions": [
+        "happy",
+        "angry"
+      ]
+    },
+    {
+      "text": "he shouted, furious.",
+      "emotions": [
+        "angry"
+      ]
+    },
+    {
+      "text": "I don’t care!",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I don’t even want to make stupid cookies with stupid people!",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Wolf stormed off, muttering under his breath and swiping angrily at the trees.",
+      "emotions": [
+        "angry"
+      ]
+    },
+    {
+      "text": "Little by little, Wolf slowed down, until he was dragging his feet like a snail, his heart heavy.",
+      "emotions": [
+        "sad"
+      ]
+    },
+    {
+      "text": "A tear rolled down his cheek.",
+      "emotions": [
+        "sad"
+      ]
+    },
+    {
+      "text": "— I shouldn’t have gotten angry, he sniffled.",
+      "emotions": [
+        "sad",
+        "angry"
+      ]
+    },
+    {
+      "text": "Lona will never love me again… I feel so sad…\n\n\n\n— Hey, what’s wrong with my awesome buddy?",
+      "emotions": [
+        "sad"
+      ]
+    },
+    {
+      "text": "came a voice behind him.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "It was Miss Yeti.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "She gave him a big hug, then said:\n— What’s done is done.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Now you have to fix your mistake!",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Go see Big Louie and Lona and apologize.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "You’ll feel so much better afterward.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "— But what if Lona doesn’t forgive me?",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "asked Wolf, worried.",
+      "emotions": [
+        "scared"
+      ]
+    },
+    {
+      "text": "— Nothing ventured, nothing gained, replied Miss Yeti.",
+      "emotions": [
+        "angry"
+      ]
+    },
+    {
+      "text": "Go on now!",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Feeling ashamed, Wolf went back and knocked on Big Louie’s door.",
+      "emotions": [
+        "ashamed"
+      ]
+    },
+    {
+      "text": "— I’m sorry, my friends, he said.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I didn’t mean what I said.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "It wasn’t kind.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "— Apology accepted, smiled Lona.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Wolf and Lona looked at each other, hearts in their eyes.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Wolf lifted his paws: he felt light, light, light!",
+      "emotions": [
+        "happy"
+      ]
+    },
+    {
+      "text": "And… he was starving!",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Let’s eat now —the macarons are ready!",
+      "emotions": [
+        "neutral"
+      ]
+    }
+  ]
+}
