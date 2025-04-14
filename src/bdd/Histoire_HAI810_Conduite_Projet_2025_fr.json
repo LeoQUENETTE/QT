@@ -1,0 +1,492 @@
+{
+  "title": "Le Loup qui apprivoisait ses émotions",
+  "language": "French",
+  "sentences": [
+    {
+      "text": "﻿Il était une fois un loup qui vivait dans une belle forêt, entouré de tous ses amis.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Il s’appelait Loup.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Mais ce loup avait un souci : il était trop émotif.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Joyeux, fâché, triste, excité… il changeait d’humeur à cent à l’heure !",
+      "emotions": [
+        "happy",
+        "sad",
+        "angry",
+        "surprised"
+      ]
+    },
+    {
+      "text": "Ainsi, quand Loup était d’humeur joyeuse, il sifflotait, le cœur léger, faisait des blagues, parlait aux arbres… Il était plein d’énergie et débordait d’idées pour s’amuser !",
+      "emotions": [
+        "happy"
+      ]
+    },
+    {
+      "text": "Cependant, si quelque chose le contrariait… Ah !",
+      "emotions": [
+        "angry"
+      ]
+    },
+    {
+      "text": "Il se renfrognait, explosait, et envoyait tout le monde balader !",
+      "emotions": [
+        "angry"
+      ]
+    },
+    {
+      "text": "— Tu dois apprendre à te calmer, Loup, lui dit un jour Maître Hibou, excédé.",
+      "emotions": [
+        "surprised",
+        "neutral"
+      ]
+    },
+    {
+      "text": "Tu nous donnes le tournis !",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "— Apprendre à me calmer ?",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Mais pourquoi ?",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "demanda Loup.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "— Pour être plus serein !",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Mais ne t’inquiète pas, nous allons t’aider… On commence demain !",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Le lendemain, Loup se rendit chez son ami.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "— Pour contrôler tes émotions, le yoga, c’est parfait !",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "déclara Maître Hibou.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Respire calmement et fais le vide en toi.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Maître Hibou enchaîna les positions : lotus, montagne… et Loup essaya de l’imiter.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Ouh là là !",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Ce n’était pas facile, mais qu’est-ce que c’était rigolo !",
+      "emotions": [
+        "happy"
+      ]
+    },
+    {
+      "text": "N’y tenant plus, Loup éclata de rire.",
+      "emotions": [
+        "happy"
+      ]
+    },
+    {
+      "text": "— On dirait que le yoga ne fonctionne pas avec toi, soupira Maître Hibou.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "À l’extérieur, Alfred attendait Loup de pied ferme.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "— Rien de tel que le sport pour se défouler, dit-il.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Je t’ai préparé un parcours spécial \"Loup excité\".",
+      "emotions": [
+        "surprised"
+      ]
+    },
+    {
+      "text": "Prêt ?",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Et il fila comme une fusée.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Derrière lui, Loup courait, sautait, rampait…\nAlfred s’arrêta au pied d’un arbre immense.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "— On se retrouve en haut !",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "cria-t-il en disparaissant dans les feuillages.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Arrivé au sommet, Loup regarda en bas… Sa gorge se serra, son cœur se mit à cogner dans sa poitrine, ses jambes à trembler.",
+      "emotions": [
+        "scared"
+      ]
+    },
+    {
+      "text": "— Alfred, j’ai peur !",
+      "emotions": [
+        "scared"
+      ]
+    },
+    {
+      "text": "paniqua-t-il.",
+      "emotions": [
+        "scared"
+      ]
+    },
+    {
+      "text": "Je vais tomber !",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "— Calme-toi, Loup, je suis avec toi.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "On va redescendre ensemble, doucement.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Loup prit une grande inspiration et, tout tremblant, il redescendit.",
+      "emotions": [
+        "scared"
+      ]
+    },
+    {
+      "text": "— Tu as vaincu ta peur, tu peux être fier de toi !",
+      "emotions": [
+        "happy",
+        "scared"
+      ]
+    },
+    {
+      "text": "le félicita Alfred.",
+      "emotions": [
+        "happy"
+      ]
+    },
+    {
+      "text": "Loup sourit : ah ça oui, il était fier de lui !",
+      "emotions": [
+        "happy"
+      ]
+    },
+    {
+      "text": "Tout ceci m’a mis en appétit, se dit Loup.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Cela tombait bien : Gros Louis l’attendait chez lui.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Les pattes pleines de farine, Gros Louis était avec Louve dans la cuisine.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "— Ils ont l’air de bien s’amuser tous les deux…, pensa Loup, jaloux.",
+      "emotions": [
+        "jealous"
+      ]
+    },
+    {
+      "text": "— Salut Loup !",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "fit Gros Louis.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Aujourd’hui, on prépare des macarons.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Pour réussir ces gâteaux, il faut être très, très patient.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Tiens, c’est un bon exercice pour toi, n’est-ce pas ?",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "À ces mots, Louve éclata de rire.",
+      "emotions": [
+        "happy"
+      ]
+    },
+    {
+      "text": "Loup sentit la moutarde lui monter au nez.",
+      "emotions": [
+        "angry"
+      ]
+    },
+    {
+      "text": "Il devint tout rouge, tapa du pied et explosa :\n— C’est ça, moquez-vous de moi !",
+      "emotions": [
+        "angry"
+      ]
+    },
+    {
+      "text": "hurla-t-il, très en colère.",
+      "emotions": [
+        "angry"
+      ]
+    },
+    {
+      "text": "Je m’en fiche !",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "De toute façon, je n’ai pas envie de faire des gâteaux idiots avec des idiots !",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Loup s’en alla, grommelant dans sa barbe et donnant des coups de patte dans les arbres.",
+      "emotions": [
+        "angry"
+      ]
+    },
+    {
+      "text": "Peu à peu, Loup ralentit son allure, pour finir par se traîner comme un escargot, le cœur lourd.",
+      "emotions": [
+        "sad"
+      ]
+    },
+    {
+      "text": "Une larme roula sur sa joue.",
+      "emotions": [
+        "sad"
+      ]
+    },
+    {
+      "text": "— Je n’aurais pas dû m’énerver, renifla-t-il.",
+      "emotions": [
+        "sad",
+        "angry"
+      ]
+    },
+    {
+      "text": "Louve ne m’aimera plus jamais… Comme je suis triste…\n\n\n\n— Mais, qu’est-ce qui arrive à mon super copain ?",
+      "emotions": [
+        "sad"
+      ]
+    },
+    {
+      "text": "fit alors une voix derrière lui.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "C’était Demoiselle Yéti.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Elle lui fit un gros câlin, puis elle dit :\n— Ce qui est fait est fait.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Maintenant, il faut réparer ta bêtise !",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Va voir Gros Louis et Louve, et excuse-toi.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Tu te sentiras beaucoup mieux après.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "— Et si Louve ne veut pas me pardonner ?",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "fit Loup, inquiet.",
+      "emotions": [
+        "scared"
+      ]
+    },
+    {
+      "text": "— Qui ne tente rien n’a rien, répondit Demoiselle Yéti.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Allez, file !",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Tout honteux, Loup retourna frapper à la porte de Gros Louis.",
+      "emotions": [
+        "ashamed"
+      ]
+    },
+    {
+      "text": "— Je vous demande pardon, les amis, fit-il.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Je ne pensais pas ce que j’ai dit.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Ce n’était pas gentil.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "— Excuses acceptées, sourit Louve.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Loup et Louve se regardèrent, des cœurs plein les yeux.",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Loup leva ses pattes : il se sentait léger, léger, léger !",
+      "emotions": [
+        "happy"
+      ]
+    },
+    {
+      "text": "Et… il était affamé !",
+      "emotions": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "À table, mes amis, les macarons sont prêts !",
+      "emotions": [
+        "neutral"
+      ]
+    }
+  ]
+}
