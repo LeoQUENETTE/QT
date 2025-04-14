@@ -17,7 +17,7 @@
         <div class="main">
             <div id="help_btn">
                 <span id="icone">&times;</span>
-                <p>Assistance</p>
+                <p>Parametrage</p>
             </div>
         </div>
     </div>
@@ -36,7 +36,7 @@
         </header>
 
         <main>
-            <div id="popup_menu" class="invisible">
+            <div id="popup_menu" class="popup_menu invisible">
                 <h1>Vous avez terminé tous les exercices félicitations !</h1>
                 <p>Vous pouvez cliquer ci dessous pour rafraichir la page.</p>
                 <button id="popup_btn">OK</button>
@@ -44,6 +44,14 @@
             <div id="error_menu" class="popup_menu invisible">
                 <h1>Erreur</h1><p id="error_explain"></p>
                 <button id="error_btn">OK</button>
+            </div>
+            <div id="parametres_menu" class="popup_menu invisible">
+                <h1>Paramètres de difficultés</h1>
+                <div>
+                    <p>Niveau de difficultés</p>
+                    <
+                </div>
+                <button id="ok_btn">OK</button>
             </div>
             <div class="robot">
                 <img id="feedbackImage" src="{{ url_for('static', filename='images/neutre.png') }}" alt="Description of image" class="main-image">
