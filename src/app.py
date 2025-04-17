@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 import json
+from shared import SRC_DIRECTORY
 from datetime import datetime
 from back.BDDCommunication import BDDCommunication
 from back.Exercice import Exercice as Ex
@@ -51,7 +52,7 @@ def get_math_scores():
     try:
         # Essayer de lire le fichier des scores s'il existe
         try:
-            with open(f".{SRC_BDD}{MATH_SCORES_FILE}", "r", encoding="utf-8") as file:
+            with open(f"{SRC_DIRECTORY}/{SRC_BDD}{MATH_SCORES_FILE}", "r", encoding="utf-8") as file:
                 scores = json.load(file)
         except (FileNotFoundError, json.JSONDecodeError):
             # Si le fichier n'existe pas ou est corrompu, renvoyer une liste vide
