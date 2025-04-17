@@ -76,7 +76,6 @@ export default class Body {
         }
 
         let exoHTML = document.getElementById("exo");
-        let valider_btn = document.getElementById("valider_btn");
 
         let exercices = new Exercices(list_exos);
         let mathExosBox = this.generateExosBox(exercices.nbExos, exoHTML);
@@ -86,20 +85,6 @@ export default class Body {
             event.preventDefault();
             if (!exercices.allExerciceDone) {
                 this.btnValidation(exercices, mathExosBox)
-            }
-            if (!exercices.allExerciceDone) {
-                exoHTML.innerHTML = ""
-                this.generateEquation(exercices, exoHTML);
-            }
-        })
-
-        valider_btn.addEventListener("click", () => {
-            if (!exercices.allExerciceDone) {
-                this.btnValidation(exercices, mathExosBox)
-            }
-            if (!exercices.allExerciceDone) {
-                exoHTML.innerHTML = ""
-                this.generateEquation(exercices, exoHTML);
             }
         })
     }
@@ -178,6 +163,9 @@ export default class Body {
                 feedbackImage.src = "/static/images/neutre.png";
 
                 exercices.nextExercice();
+                let exoHTML = document.getElementById("exo");
+                exoHTML.innerHTML = "";
+                this.generateEquation(exercices, exoHTML);
                 mathExosBox[exercices.nbSolvedExos - 1].classList.remove("selected");
                 mathExosBox[exercices.nbSolvedExos - 1].classList.add("success");
 
@@ -199,10 +187,7 @@ export default class Body {
                         location.reload();
                     });
                 }
-
-                let exoHTML = document.getElementById("exo");
-                exoHTML.innerHTML = "";
-                this.generateEquation(exercices, exoHTML);
+                
             }, { once: true });
         } else {
             feedbackImage.src = "/static/images/incorrect.png";

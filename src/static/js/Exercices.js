@@ -83,7 +83,7 @@ export class Exercice{
             }
             return equal;
         } catch (e) {
-            this.errorName = "SIl y a eu un problème pendant l'évaluation";
+            this.errorName = "S'il y a eu un problème pendant l'évaluation";
             return false;
         }
     }
