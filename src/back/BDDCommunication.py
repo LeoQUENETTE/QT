@@ -79,7 +79,7 @@ class BDDCommunication():
             "type": "History",
             "title": story_data_lang.get("title", "Story"),
             "content": " ".join([s["text"] for s in story_data_lang.get("sentences", [])]),
-            "language": story_data_lang.get("language", "English"),
+            "language": story_data_lang.get("language", lang),
             "advanced_format": True,
             "sentences": story_data_lang.get("sentences", []),
             "sentence_count": len(story_data_lang.get("sentences", []))

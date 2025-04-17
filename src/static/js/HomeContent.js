@@ -41,72 +41,46 @@ export default class HomeContent {
 
     // Charge uniquement les titres des histoires depuis le fichier JSON avancé
     async loadStoriesList() {
+        const languages = new Map([
+            ["French" , this.frStoriesList],
+            ["English",this.enStoriesList]]
+        );
         try {
             // Récupérer directement les données du fichier avancé
-            const response = await fetch("/advanced_history");
-            const data = await response.json();
+            languages.forEach(async (htmlElement,lang) => {
+                const response = await fetch("/advanced_history?lang="+lang);
+                const data = await response.json();
+                
 
-            // Afficher le titre de l'histoire en français
-            if (data && data.title && data.language === "French") {
-                this.frStoriesList.innerHTML = `
-                    <div class="story-item">
-                        <span class="story-icon">📖</span>
-                        <p class="story-title">${data.title}</p>
-                    </div>
-                `;
+                // Afficher le titre de l'histoire en français
+                if (data && data.title && data.language === lang) {
+                    htmlElement.innerHTML = `
+                        <div class="story-item">
+                            <span class="story-icon">📖</span>
+                            <p class="story-title">${data.title}</p>
+                        </div>
+                    `;
 
-                // Ajouter un événement de clic pour charger l'histoire en français
-                const storyItem = this.frStoriesList.querySelector(".story-item");
-                if (storyItem) {
-                    storyItem.addEventListener("click", () => {
-                        // Changer la langue si nécessaire
-                        if (this.homePage.lang !== "French") {
-                            this.homePage.changeLanguage("French").then(() => {
-                                // Puis charger l'histoire
+                    // Ajouter un événement de clic pour charger l'histoire en français
+                    const storyItem = htmlElement.querySelector(".story-item");
+                    if (storyItem) {
+                        storyItem.addEventListener("click", () => {
+                            // Changer la langue si nécessaire
+                            if (this.homePage.lang !== lang) {
+                                this.homePage.changeLanguage(lang).then(() => {
+                                    // Puis charger l'histoire
+                                    this.homePage.header.historyMode(this.homePage);
+                                });
+                            } else {
+                                // Sinon, charger directement l'histoire
                                 this.homePage.header.historyMode(this.homePage);
-                            });
-                        } else {
-                            // Sinon, charger directement l'histoire
-                            this.homePage.header.historyMode(this.homePage);
-                        }
-                    });
+                            }
+                        });
+                    }
+                } else {
+                    htmlElement.innerHTML = "<p class='loading'>Aucune histoire disponible</p>";
                 }
-            } else {
-                this.frStoriesList.innerHTML = "<p class='loading'>Aucune histoire disponible</p>";
-            }
-
-            // Récupérer les données en anglais
-            const responseEn = await fetch("/advanced_history?lang=English");
-            const dataEn = await responseEn.json();
-
-            // Afficher le titre de l'histoire en anglais
-            if (dataEn && dataEn.title && dataEn.language === "English") {
-                this.enStoriesList.innerHTML = `
-                    <div class="story-item">
-                        <span class="story-icon">📖</span>
-                        <p class="story-title">${dataEn.title}</p>
-                    </div>
-                `;
-
-                // Ajouter un événement de clic pour charger l'histoire en anglais
-                const storyItem = this.enStoriesList.querySelector(".story-item");
-                if (storyItem) {
-                    storyItem.addEventListener("click", () => {
-                        // Changer la langue si nécessaire
-                        if (this.homePage.lang !== "English") {
-                            this.homePage.changeLanguage("English").then(() => {
-                                // Puis charger l'histoire
-                                this.homePage.header.historyMode(this.homePage);
-                            });
-                        } else {
-                            // Sinon, charger directement l'histoire
-                            this.homePage.header.historyMode(this.homePage);
-                        }
-                    });
-                }
-            } else {
-                this.enStoriesList.innerHTML = "<p class='loading'>No stories available</p>";
-            }
+            })
         } catch (error) {
             console.error("Erreur lors du chargement des histoires:", error);
             this.frStoriesList.innerHTML = "<p class='loading'>Erreur de chargement</p>";
@@ -119,6 +93,7 @@ export default class HomeContent {
         try {
             const response = await fetch("/math/scores");
             const scores = await response.json();
+            console.log(response)
 
             if (!scores || scores.length === 0 || scores.error) {
                 this.mathScoresList.innerHTML = "<p class='no-scores'>Aucun exercice effectué récemment</p>";
