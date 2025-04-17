@@ -69,6 +69,7 @@ def save_math_score():
     try:
         # Récupérer les données du score
         score_data = request.json
+        print(score_data)
         if not score_data or "score" not in score_data or "total" not in score_data:
             return jsonify({"error": "Invalid score data", "type": "Error"})
         
@@ -79,10 +80,10 @@ def save_math_score():
             "total": score_data["total"],
             "percentage": round((score_data["score"] / score_data["total"]) * 100)
         }
-        
+        print(f"{SRC_DIRECTORY}/{SRC_BDD}{MATH_SCORES_FILE}")
         # Lire les scores existants
         try:
-            with open(f".{SRC_BDD}{MATH_SCORES_FILE}", "r", encoding="utf-8") as file:
+            with open(f"{SRC_DIRECTORY}/{SRC_BDD}{MATH_SCORES_FILE}", "r", encoding="utf-8") as file:
                 scores = json.load(file)
         except (FileNotFoundError, json.JSONDecodeError):
             scores = []
@@ -91,7 +92,7 @@ def save_math_score():
         scores.append(new_score)
         
         # Enregistrer les scores mis à jour
-        with open(f".{SRC_BDD}{MATH_SCORES_FILE}", "w", encoding="utf-8") as file:
+        with open(f"{SRC_DIRECTORY}/{SRC_BDD}{MATH_SCORES_FILE}", "w", encoding="utf-8") as file:
             json.dump(scores, file, indent=4)
         
         return jsonify({"success": True})
