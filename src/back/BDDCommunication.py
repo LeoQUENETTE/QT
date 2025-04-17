@@ -1,7 +1,7 @@
 from back.Exercice import Exercice
 from back.Histoire import Histoire
+from shared import SRC_DIRECTORY
 import json
-
 
 class BDDCommunication():
     srcBDD : str
@@ -25,7 +25,7 @@ class BDDCommunication():
     def _openFile(self, fileName : str, filter : str = None):
         """Opens a JSON file and returns a list of its objects."""
         try:
-            with open("./"+self.srcBDD+fileName, "r", encoding="utf-8") as file:
+            with open(SRC_DIRECTORY+"/"+self.srcBDD+fileName, "r", encoding="utf-8") as file:
                 data = json.load(file)
                 if isinstance(data, dict) and filter != None:
                     if filter in data:

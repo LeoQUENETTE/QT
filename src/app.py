@@ -5,7 +5,7 @@ from back.BDDCommunication import BDDCommunication
 from back.Exercice import Exercice as Ex
 from back.Histoire import Histoire as Hiz
 
-SRC_BDD = "/bdd/"
+SRC_BDD = "bdd/"
 HISTORY_FILE_NAME = "Histoire_BDD.json"
 EXOS_FILE_NAME = "Exos_BDD.json"
 ADVANCED_HISTORY_FILE_NAME = "Histoire_HAI810_Conduite_Projet_2025.json"
