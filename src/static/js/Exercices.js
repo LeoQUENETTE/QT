@@ -41,7 +41,6 @@ export class Exercice{
     }
 
     checkAnswers() {
-        console.log(this.equation);
         const [left, right] = this.equation.split('=').map(s => s.trim());
         
         let answerIndex = 0;

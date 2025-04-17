@@ -112,17 +112,19 @@
 
                     <div id="math_zone">
                         <div id="list_exos"></div>
-                        <div class="exercice" id="exo">
-                            <p>5 + </p>
-                            <textarea id="answer" class="answer_area">?</textarea>
-                            <p> = 12</p>
-                        </div>
-                        <p id="errorArea" class="error invisible">No error</p>
-                        <div id="maths_btn">
-                            <div id="retour_btn" style="display:none">Retour</div>
-                            <div id="valider_btn">Valider</div>
-                            <div id="next_btn" style="display:none">Suivant</div>
-                        </div>
+                        <form id="math_form">
+                            <div class="exercice" id="exo">
+                                    <p>5 + </p>
+                                    <input id="answer" type="text" class="answer_area">
+                                    <p> = 12</p>
+                            </div>
+                            <p id="errorArea" class="error invisible">No error</p>
+                            <div id="maths_btn">
+                                <button type="button" id="retour_btn" style="display:none">Retour</button>
+                                <button  type="submit" id="valider_btn">Valider</button>
+                                <button type="button" id="next_btn" style="display:none">Suivant</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

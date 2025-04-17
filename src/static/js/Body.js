@@ -82,6 +82,17 @@ export default class Body {
         let mathExosBox = this.generateExosBox(exercices.nbExos, exoHTML);
         this.generateEquation(exercices, exoHTML);
 
+        document.getElementById("math_form").addEventListener("submit", (event) => {
+            event.preventDefault();
+            if (!exercices.allExerciceDone) {
+                this.btnValidation(exercices, mathExosBox)
+            }
+            if (!exercices.allExerciceDone) {
+                exoHTML.innerHTML = ""
+                this.generateEquation(exercices, exoHTML);
+            }
+        })
+
         valider_btn.addEventListener("click", () => {
             if (!exercices.allExerciceDone) {
                 this.btnValidation(exercices, mathExosBox)
@@ -101,7 +112,7 @@ export default class Body {
             equation.innerHTML = exo.splitedEquations[i];
             exoHTML.appendChild(equation);
             if (i < exo.nb_equations - 1) {
-                let answer = document.createElement("textarea");
+                let answer = document.createElement("input");
                 answer.value = "";
                 answer.classList.add("answer_area");
                 answer.id = "answer" + i;
@@ -151,7 +162,6 @@ export default class Body {
 
         if (goodAnswer) {
             feedbackImage.src = "/static/images/correct.png";
-            console.log("Image changée vers : " + feedbackImage.src);
             valider_btn.classList.remove("error");
             errorArea.textContent = "Bonne réponse !";
             errorArea.style.color = "green";
@@ -166,7 +176,6 @@ export default class Body {
                 valider_btn.style.display = "block";
 
                 feedbackImage.src = "/static/images/neutre.png";
-                console.log("Image remise à : " + feedbackImage.src);
 
                 exercices.nextExercice();
                 mathExosBox[exercices.nbSolvedExos - 1].classList.remove("selected");
@@ -197,12 +206,10 @@ export default class Body {
             }, { once: true });
         } else {
             feedbackImage.src = "/static/images/incorrect.png";
-            console.log("Image changée vers : " + feedbackImage.src);
             valider_btn.classList.add("error");
             errorArea.textContent = exercices.actualExo.errorName;
             errorArea.style.color = "red";
             errorArea.classList.remove("invisible");
-            console.log(exercices.actualExo.errorName);
             if (exercices.actualExo.errorName == "Mauvaise réponse") {
                 let errorExplanation = document.getElementById("error_explain");
                 errorPopup.classList.remove("invisible");

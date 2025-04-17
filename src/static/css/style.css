@@ -220,7 +220,7 @@ main>div {
     padding: 20px;
 }
 
-#maths_btn>div {
+#maths_btn>button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -233,7 +233,7 @@ main>div {
     text-align: center;
 }
 
-#maths_btn>div:hover {
+#maths_btn>button:hover {
     transform: scale(1.1);
     cursor: pointer;
 }
