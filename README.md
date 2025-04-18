@@ -1,47 +1,66 @@
-# Description
+# Projet QTrobot - Apprentissage Ludique pour Enfants
 
-Il s'agit d'un projet développé par l'équipe template pourris™
-* Maksym Lytvynenko
-* Léonard Rivals
-* Léo Quenette
-* Matis Bazireau
- 
+Projet réalisé par l'équipe **template pourris™** :  
+- Maksym Lytvynenko  
+- Léonard Rivals  
+- Léo Quenette  
+- Matis Bazireau  
 
-Dans le cadre de l'UE gestion de projet, la réalisation de l'exercice suivant nous as été demandé.
-Cet exercice consiste en le développement d'une page-web pouvant aider des enfants dans l'apprentissage de deux matières, les mathématiques et l'histoire.
-L'objectif est de choisir l'une de ses deux matières et d'utiliser l'interface de QTrobot pour rendre le tout éducatif et ludique.
+Dans le cadre de l’UE **Gestion de Projet**, il nous a été demandé de développer une page web éducative destinée aux enfants, avec pour objectif de les accompagner dans l’apprentissage de deux matières fondamentales : **les mathématiques** et **l’histoire**.
 
-"QTrobot est un petit humanoïde expressif conçu comme un outil pour les thérapeutes et les éducateurs. Il utilise des expressions faciales, des gestes et des jeux pour enseigner aux enfants atteints de troubles du spectre autistique la communication, les émotions et les compétences sociales."
+Nous avons utilisé l’interface du **QTrobot**, un petit robot humanoïde expressif, comme support ludique et pédagogique. Ce robot est initialement conçu pour les enfants atteints de troubles du spectre autistique, afin de les aider à mieux comprendre les émotions, la communication et les compétences sociales.
 
-Dans notre cas, nous avons décidé d'implémenter les deux matières, les "mathématiques" et les "histoires". Nous avons fait ce choix dans l'objetif de donner une expérience complètes aux utilisateur mais aussi de varier les exercices auxquelles l'enfant est soumis.
+> 💡 **Note :** Dans notre projet, nous utilisons une version **2D** de QTrobot (images et animations) et non le robot physique. Cela nous permet d’évaluer l’efficacité d'une interface visuelle dans la transmission des intentions du robot.
 
-(!! Attention, qtrobot est un robot physique dans son emploi principal, ici, nous utilisons juste une version 2D pour chercher si oui ou non, une interface 2d/image peut avoir un rôle à Qtrobot « physique »!!)
+---
 
-# Fonctionnalités
+## 🧠 Fonctionnalités
 
-## Mathématiques
+### 🤖 Interaction Émotionnelle
 
-Notre robot devra pouvoir être capable de proposer des questions de mathématiques de niveau "CP", tout en pouvant expliquer si la réponse donnée par l'utilisateur est vraie ou non et expliquer comment trouver la solution si l'on s'est trompé.
+L’un des objectifs de ce projet est de permettre aux enfants de reconnaître des émotions simples à travers des visuels. QTrobot affiche différentes expressions en fonction des réponses de l’enfant :
+- ✅ Bonne réponse : QT est **heureux**.
+- ❌ Mauvaise réponse : QT devient **triste** ou **déçu**.
 
-L'enfant peut ainsi faire une série de 5 questions faciles en mathématiques ne comportant que des additions et des soustractions. A chaque erreur une popup est affiché montrant le calcul réalisé par l'enfant.
+Cette approche aide à développer l’empathie et à renforcer le lien affectif avec l’interface.
 
-Si un enfant réussi la série de question son score est sauvegardé e il pourra ainsi admiré son score !
+### ➕ Mathématiques (niveau CP)
 
-## Lecture
+Le robot propose une série de **5 questions** basées sur des opérations simples (additions et soustractions).  
+Fonctionnalités incluses :
+- Validation de la réponse.
+- Explication de la bonne réponse en cas d’erreur.
+- Affichage d'une popup en cas de réponse incorrecte, montrant le raisonnement suivi.
+- Sauvegarde du score de l’enfant à la fin du quiz.
 
-Notre robot permet de lire des histoires en français et en anglais, et de les afficher. Les histoires sont lu grâce à de la synthérication vocale et sont synchronisé avec la lecture, permettant à l'enfant de faire le lien entre les mots lu et les mots dit par le robot, facilitant l'apprentissage de la langue choisi.
+### 📖 Lecture d'Histoires
 
-Il est aussi tout à fait possible de faire une pause dans la lecture de l'histoire ou de revenir sur une phrase déjà entamer.
+QTrobot lit des histoires en **français** et en **anglais**, accompagnées d’une **synthèse vocale** synchronisée avec le texte affiché à l’écran :
+- L’enfant suit les mots à l’écran pendant qu’ils sont lus.
+- Possibilité de **mettre en pause** la lecture ou de **revenir en arrière** pour mieux comprendre.
+- Aide à la reconnaissance des mots et à l’apprentissage de la langue choisie.
 
-# Installation
+---
 
-Le site n'étant pas hébergé, et donc non disponible en ligne il est nécessaire de le télécharger et de le faire fonctionner sur un réseau local.
+## ⚙️ Installation et Lancement
 
-Afin de pouvoir profiter du site il est nécessaire de devoir installer python au minimum 3.9 sut le site de l'entreprise : 
-https://www.python.org/
+Le projet n'étant pas encore hébergé en ligne, il doit être exécuté **en local** sur votre machine.
 
-Puis de cloner le code du site est de faire les commandes suivantes dans un terminal :  
-pip install flask
-python src/app.py
+### Prérequis
+- **Python 3.9 ou supérieur** : [Télécharger ici](https://www.python.org/)
 
-Cela vous lancera une instance du site sur votre machine en local permettant de profiter de l'expérience QT en local.
+### Étapes d'installation
+1. **Instaler Flask** :
+    ```bash
+    pip install flask
+    ```
+
+2. **Cloner le dépôt du projet** :
+   ```bash
+   git clone https://github.com/LeoQUENETTE/QT.git
+   cd QT
+   ```
+3. **Lancer le projet** :
+    ```bash
+    python src/app.py
+    ```
