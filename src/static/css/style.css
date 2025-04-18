@@ -843,3 +843,304 @@ main {
         flex: 1;
     }
 }
+
+/* Styles pour le bouton de retour */
+.retour_btn {
+    background-color: #9c27b0 !important;
+    color: white !important;
+    padding: 10px 20px !important;
+    border-radius: 5px !important;
+    font-size: 16px !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s ease !important;
+}
+
+/* Style pour le bouton de lecture vocale et pause */
+#story_speak_btn,
+#story_pause_speak_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    background-color: #4e5af5;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#story_speak_btn:hover,
+#story_pause_speak_btn:hover {
+    background-color: #3a46e0;
+    transform: scale(1.05);
+}
+
+/* Style pour le bouton de lecture vocale actif */
+#story_speak_btn.active {
+    background-color: #e04c4c;
+}
+
+#story_speak_btn.active:hover {
+    background-color: #c23a3a;
+}
+
+/* Animation pour indiquer que la synthèse vocale est en cours */
+@keyframes pulsate {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#story_speak_btn.active,
+#story_pause_speak_btn {
+    animation: pulsate 2s infinite;
+}
+
+/* Responsive design pour les boutons sur petits écrans */
+@media screen and (max-width: 768px) {
+    .history_navigation {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #story_speak_btn,
+    #story_pause_speak_btn,
+    #story_prev_btn,
+    #story_next_btn,
+    #story_auto_btn,
+    #story_stop_btn {
+        margin: 5px;
+        font-size: 0.9em;
+    }
+}
+
+/* Styles améliorés pour la synthèse vocale */
+/* À ajouter à votre fichier style.css */
+
+/* Style pour le bouton de lecture vocale et pause */
+#story_speak_btn,
+#story_pause_speak_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    background-color: #4e5af5;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    position: relative;
+    /* Pour les info-bulles */
+}
+
+#story_speak_btn:hover,
+#story_pause_speak_btn:hover {
+    background-color: #3a46e0;
+    transform: scale(1.05);
+}
+
+/* Style pour le bouton de lecture vocale actif */
+#story_speak_btn.active {
+    background-color: #e04c4c;
+}
+
+#story_speak_btn.active:hover {
+    background-color: #c23a3a;
+}
+
+/* Animation pour indiquer que la synthèse vocale est en cours */
+@keyframes pulsate {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#story_speak_btn.active,
+#story_pause_speak_btn {
+    animation: pulsate 2s infinite;
+}
+
+/* Style pour les contrôles de voix (vitesse) */
+.voice_controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    padding: 5px;
+    background-color: rgba(78, 91, 245, 0.1);
+    border-radius: 5px;
+}
+
+.voice_controls label {
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+.voice_controls input[type="range"] {
+    -webkit-appearance: none;
+    width: 120px;
+    height: 8px;
+    background: #d3d3d3;
+    outline: none;
+    border-radius: 4px;
+}
+
+.voice_controls input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #4e5af5;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.voice_controls input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: #4e5af5;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+/* Info-bulle pour le bouton de lecture vocale */
+#story_speak_btn[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1000;
+}
+
+/* Modification du layout pour les contrôles d'histoire pour intégrer les nouveaux boutons */
+.history_navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* Responsive design pour les boutons sur petits écrans */
+@media screen and (max-width: 768px) {
+    .history_navigation {
+        gap: 5px;
+    }
+
+    #story_speak_btn,
+    #story_pause_speak_btn,
+    #story_prev_btn,
+    #story_next_btn,
+    #story_auto_btn,
+    #story_stop_btn {
+        font-size: 0.85em;
+        padding: 6px 10px;
+    }
+
+    .voice_controls {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .voice_controls label {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+}
+
+/* Style pour le bouton de lecture vocale et pause */
+#story_speak_btn,
+#story_pause_speak_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    background-color: #4e5af5;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    position: relative;
+    /* Pour les info-bulles */
+}
+
+#story_speak_btn:hover,
+#story_pause_speak_btn:hover {
+    background-color: #3a46e0;
+    transform: scale(1.05);
+}
+
+/* Style pour le bouton de lecture vocale actif */
+#story_speak_btn.active {
+    background-color: #e04c4c;
+}
+
+#story_speak_btn.active:hover {
+    background-color: #c23a3a;
+}
+
+/* Animation pour indiquer que la synthèse vocale est en cours */
+@keyframes pulsate {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#story_speak_btn.active,
+#story_pause_speak_btn {
+    animation: pulsate 2s infinite;
+}
+
+/* Responsive design pour les boutons sur petits écrans */
+@media screen and (max-width: 768px) {
+    .history_navigation {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #story_speak_btn,
+    #story_pause_speak_btn,
+    #story_prev_btn,
+    #story_next_btn,
+    #story_auto_btn,
+    #story_stop_btn {
+        margin: 5px;
+        font-size: 0.9em;
+    }
+}
