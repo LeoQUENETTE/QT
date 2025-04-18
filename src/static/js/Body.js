@@ -50,11 +50,29 @@ export default class Body {
     }
 
     generate_advanced_history(historyData) {
+        // Nettoyer l'ancien lecteur s'il existe
+        if (this.historyReader) {
+            this.historyReader.cleanup();
+        }
+
         // Initialiser le lecteur d'histoire avec les données
         this.historyReader = new HistoryReader(historyData);
 
         // Démarrer la lecture à partir de la première phrase
         this.historyReader.start();
+
+        // Assurer que tous les contrôles d'histoire sont correctement affichés
+        // Cette partie est importante pour les boutons de synthèse vocale
+        const speakBtn = document.getElementById("story_speak_btn");
+        const pauseSpeakBtn = document.getElementById("story_pause_speak_btn");
+
+        if (speakBtn) {
+            speakBtn.style.display = "block";
+        }
+
+        if (pauseSpeakBtn) {
+            pauseSpeakBtn.style.display = "none"; // Caché par défaut, s'affiche lors de la lecture
+        }
     }
 
     generation_math_exos(list_exos) {
@@ -231,9 +249,9 @@ export default class Body {
 
     // Méthode pour arrêter/nettoyer toutes les ressources avant de naviguer ailleurs
     cleanup() {
-        // Arrêter la lecture automatique si active
+        // Arrêter la lecture automatique et la synthèse vocale si actives
         if (this.historyReader) {
-            this.historyReader.stopAutoPlay();
+            this.historyReader.cleanup();
             this.historyReader = null;
         }
     }
