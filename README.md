@@ -22,6 +22,11 @@ L’un des objectifs de ce projet est de permettre aux enfants de reconnaître d
 - ✅ Bonne réponse : QT est **heureux**.
 - ❌ Mauvaise réponse : QT devient **triste** ou **déçu**.
 
+Ce fonctionnement est vrai aussi lors de la lecture des histoires :
+- Mot faisant référence à la joie : QT est **heureux**
+- Mot faisant référence à la trsitessse : QT est **triste**
+- Mot faisant référence à la colère : QT est en **colère** 
+
 Cette approche aide à développer l’empathie et à renforcer le lien affectif avec l’interface.
 
 ### ➕ Mathématiques (niveau CP)
