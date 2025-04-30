@@ -48,6 +48,7 @@ QTrobot lit des histoires en **français** et en **anglais**, accompagnées d’
 ---
 ## Architecture
 L'application est découpé en plusieurs section, une pour le stockage persistent des données sur la machine, un autre pour la gestion des requêtes entre le front et le back et enfin un pour générer les histoires et les exercices.
+Des batteries de tests on été mis en place afin d'assurer le bon fonctionnement des méthodes du site.
 
 ## ⚙️ Installation et Lancement
 
