@@ -46,6 +46,8 @@ QTrobot lit des histoires en **français** et en **anglais**, accompagnées d’
 - Aide à la reconnaissance des mots et à l’apprentissage de la langue choisie.
 
 ---
+## Architecture
+L'application est découpé en plusieurs section, une pour le stockage persistent des données sur la machine, un autre pour la gestion des requêtes entre le front et le back et enfin un pour générer les histoires et les exercices.
 
 ## ⚙️ Installation et Lancement
 
